@@ -6,7 +6,7 @@ deployments:
     replicas: as-many-as-possible
     serviceAccountName: deployer
     containers:
-      - name: nginx
-        image: nginx
-        imageTag: 1.19
-        pullPolicy: Always
+    - name: nginx
+      image: nginx
+      imageTag: 1.19
+      pullPolicy: Always

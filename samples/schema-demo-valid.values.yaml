@@ -1,13 +1,13 @@
 defaultImage: nginx
 defaultImageTag: latest
-defaultImagePullPolicy: "IfNotPresent"
+defaultImagePullPolicy: IfNotPresent
 
 deployments:
   nginx:
     replicas: 2
     serviceAccountName: deployer
     containers:
-      - name: nginx
-        image: nginx
-        imageTag: 1.19
-        imagePullPolicy: Always
+    - name: nginx
+      image: nginx
+      imageTag: 1.19
+      imagePullPolicy: Always

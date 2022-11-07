@@ -1,9 +1,9 @@
-releasePrefix: "-"
+releasePrefix: '-'
 
 # --set "envs.BAR=foo,envs.TEST=true"
 envs:
   BAR: foo
-  TEST: "true"
+  TEST: 'true'
 
 # --set "envsString=$ENVS_STRING"
 envsString: |
@@ -74,7 +74,7 @@ deployments:
     containers:
     - env:
       - name: MY_ENV
-        value: "1234"
+        value: '1234'
       envSecrets:
       - secret-envs
       envConfigmaps:
@@ -100,7 +100,7 @@ deployments:
 
 services:
   nginx:
-    type: "NodePort"
+    type: NodePort
     ports:
     - name: api
       protocol: TCP
@@ -112,8 +112,8 @@ services:
 ingresses:
   web.app.ru:
     annotations:
-      nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/proxy-body-size: "128m"
+      nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+      nginx.ingress.kubernetes.io/proxy-body-size: 128m
     certManager:
       issuerType: cluster-issuer
       issuerName: letsencrypt

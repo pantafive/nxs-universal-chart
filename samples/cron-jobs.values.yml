@@ -5,7 +5,7 @@ cronJobs:
       nodeAffinity: {}
       podAntiAffinity: {}
       podAffinity: {}
-    schedule: "00 05 * * *"
+    schedule: 00 05 * * *
     containers:
     - command: send-mail
       volumeMounts:
@@ -23,7 +23,7 @@ cronJobs:
       nodeAffinity: {}
       podAntiAffinity: {}
       podAffinity: {}
-    schedule: "00 * * * *"
+    schedule: 00 * * * *
     containers:
     - command: flush-cache
       volumeMounts:
@@ -41,7 +41,7 @@ cronJobs:
       nodeAffinity: {}
       podAntiAffinity: {}
       podAffinity: {}
-    schedule: "00 2 7 * *"
+    schedule: 00 2 7 * *
     containers:
     - command: make-report
       volumeMounts:

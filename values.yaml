@@ -33,11 +33,11 @@ podAntiAffinityPreset: soft
 nodeAffinityPreset:
   # Node affinity type
   # Allowed values: soft, hard
-  type: ""
+  type: ''
   # Node label key to match
   # E.g.
   # key: "kubernetes.io/e2e-az-name"
-  key: ""
+  key: ''
   # Node label values to match
   # E.g.
   # values:
@@ -46,7 +46,7 @@ nodeAffinityPreset:
   values: []
 
 # Release name used by default. To make it empty use "-"
-releasePrefix: ""
+releasePrefix: ''
 
 # --set "envs.FOO=bar,envs.TEST=true"
 envs: {}
@@ -54,7 +54,7 @@ envs: {}
 #  TEST: true
 
 # --set "envsString=$ENVS_STRING"
-envsString: ""
+envsString: ''
 #envsString: |
 #  BAR2: foo2
 
@@ -63,7 +63,7 @@ secretEnvs: {}
 #  FOO: bar
 
 # --set "secretEnvsString=$SECRET_ENVS_STRING"
-secretEnvsString: ""
+secretEnvsString: ''
 #secretEnvsString: |
 #  FOO: BAR
 
@@ -74,7 +74,7 @@ imagePullSecrets: {}
 
 defaultImage: nginx
 defaultImageTag: latest
-defaultImagePullPolicy: "IfNotPresent"
+defaultImagePullPolicy: IfNotPresent
 
 deployments: {}
 #  nginx:
@@ -272,8 +272,8 @@ serviceMonitors: {}
 
 diagnosticMode:
   enbled: false
-  command: ["sleep"]
-  args: ["infinity"]
+  command: [sleep]
+  args: [infinity]
 
 extraDeploy: {}
 #  net-pol: |-
