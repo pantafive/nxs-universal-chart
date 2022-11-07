@@ -157,20 +157,20 @@ The command removes all the Kubernetes components associated with the chart and 
 | `loadBalancerSourceRanges` | Service Load Balancer sources                                         | `[]`        |
 | `externalTrafficPolicy`    | Service external traffic policy                                       | `"Cluster"` |
 | `healthCheckNodePort`      | Health check node port (numeric port number) for the service          | ``          |
-| `externalIPs`              | Array of the external IPs that route to one or more cluster nodes     | `[]`        | 
-| `ports`                    | Array of the service [port](#service-ports-object-parameters) objects | `[]`        | 
-| `extraSelectorLabels`      | Extra selectorLabels for select workload                              | `{}`        | 
-| `clusterIP`                | Service clusterIP parameter value                                     | `""`        | 
+| `externalIPs`              | Array of the external IPs that route to one or more cluster nodes     | `[]`        |
+| `ports`                    | Array of the service [port](#service-ports-object-parameters) objects | `[]`        |
+| `extraSelectorLabels`      | Extra selectorLabels for select workload                              | `{}`        |
+| `clusterIP`                | Service clusterIP parameter value                                     | `""`        |
 
 #### Service `ports` object parameters:
 
 | Name         | Description                  | Value   |
 |--------------|------------------------------|---------|
-| `name`       | Name of the service port     | `""`    | 
-| `protocol`   | Protocol of the service port | `"TCP"` | 
-| `port`       | Service port number          | ``      | 
-| `targetPort` | Service target port number   | ``      | 
-| `nodePort`   | Service NodePort number      | ``      | 
+| `name`       | Name of the service port     | `""`    |
+| `protocol`   | Protocol of the service port | `"TCP"` |
+| `port`       | Service port number          | ``      |
+| `targetPort` | Service target port number   | ``      |
+| `nodePort`   | Service NodePort number      | ``      |
 
 ### Ingresses parameters
 
@@ -210,10 +210,10 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name               | Description                                  | Value      |
 |--------------------|----------------------------------------------|------------|
-| `type`             | Secret type                                  | `"Opaque"` | 
-| `labels`           | Extra secret labels                          | `{}`       | 
-| `annotations`      | Extra secret annotations                     | `{}`       | 
-| `data`             | Map of Secret data                           | `{}`       | 
+| `type`             | Secret type                                  | `"Opaque"` |
+| `labels`           | Extra secret labels                          | `{}`       |
+| `annotations`      | Extra secret annotations                     | `{}`       |
+| `data`             | Map of Secret data                           | `{}`       |
 
 Secret `data` object is a map where value can be a string, json or base64 encoded string with prefix `b64:`.
 
@@ -223,9 +223,9 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 
 | Name               | Description                                     | Value     |
 |--------------------|-------------------------------------------------|-----------|
-| `labels`           | Extra ConfigMap labels                          | `{}`      | 
-| `annotations`      | Extra ConfigMap annotations                     | `{}`      | 
-| `data`             | Map of ConfigMap data                           | `{}`      | 
+| `labels`           | Extra ConfigMap labels                          | `{}`      |
+| `annotations`      | Extra ConfigMap annotations                     | `{}`      |
+| `data`             | Map of ConfigMap data                           | `{}`      |
 
 ### PersistentVolumeClaims parameters
 
@@ -233,12 +233,12 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 
 | Name               | Description                                          | Value          |
 |--------------------|------------------------------------------------------|----------------|
-| `labels`           | Extra Persistent Volume Claim labels                 | `{}`           | 
-| `annotations`      | Extra Persistent Volume Claim annotations            | `{}`           | 
-| `accessModes`      | Persistent Volume access modes                       | `[]`           | 
-| `volumeMode`       | Persistent Volume volume mode                        | `"Filesystem"` | 
-| `storageClassName` | Persistent Volume Storage Class name                 | `""`           | 
-| `selector`         | Labels selector to further filter the set of volumes | `{}`           | 
+| `labels`           | Extra Persistent Volume Claim labels                 | `{}`           |
+| `annotations`      | Extra Persistent Volume Claim annotations            | `{}`           |
+| `accessModes`      | Persistent Volume access modes                       | `[]`           |
+| `volumeMode`       | Persistent Volume volume mode                        | `"Filesystem"` |
+| `storageClassName` | Persistent Volume Storage Class name                 | `""`           |
+| `selector`         | Labels selector to further filter the set of volumes | `{}`           |
 
 ### Hooks parameters
 
@@ -248,11 +248,11 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 |----------------------------------------|-----------------------------------------------------------------------------------------|-------|
 | `hooksGeneral.labels`                  | Extra labels for all Hook Job                                                           | `{}`  |
 | `hooksGeneral.annotations`             | Extra annotations for all Hook Job                                                      | `{}`  |
-| `hooksGeneral.parallelism`             | How much Jobs can be run in parallel (ignored if defined on Hook level)                 | `1`   | 
-| `hooksGeneral.completions`             | How much Pods should finish to finish Job (ignored if defined on Hook level)            | `1`   | 
-| `hooksGeneral.activeDeadlineSeconds`   | Duration of the Job (ignored if defined on Hook level)                                  | `100` | 
-| `hooksGeneral.backoffLimit`            | Number of retries before considering a Job as failed (ignored if defined on Hook level) | `6`   | 
-| `hooksGeneral.ttlSecondsAfterFinished` | TTL for delete finished Hook Job (ignored if defined on Hook level)                     | `100` | 
+| `hooksGeneral.parallelism`             | How much Jobs can be run in parallel (ignored if defined on Hook level)                 | `1`   |
+| `hooksGeneral.completions`             | How much Pods should finish to finish Job (ignored if defined on Hook level)            | `1`   |
+| `hooksGeneral.activeDeadlineSeconds`   | Duration of the Job (ignored if defined on Hook level)                                  | `100` |
+| `hooksGeneral.backoffLimit`            | Number of retries before considering a Job as failed (ignored if defined on Hook level) | `6`   |
+| `hooksGeneral.ttlSecondsAfterFinished` | TTL for delete finished Hook Job (ignored if defined on Hook level)                     | `100` |
 | `hooksGeneral.podLabels`               | Extra pod labels for Hook Job (ignored if defined on Hook level)                        | `{}`  |
 | `hooksGeneral.podAnnotations`          | Extra pod annotations for Hook Job (ignored if defined on Hook level)                   | `{}`  |
 | `hooksGeneral.serviceAccountName`      | The name of the ServiceAccount to use by Hook Job (ignored if defined on Hook level)    | `""`  |
@@ -264,16 +264,16 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 
 | Name                      | Description                                                                              | Value                       |
 |---------------------------|------------------------------------------------------------------------------------------|-----------------------------|
-| `labels`                  | Extra Hook Job labels                                                                    | `{}`                        | 
-| `annotations`             | Extra Hook Job annotations                                                               | `{}`                        | 
-| `kind`                    | Kind of the Helm Hook                                                                    | `"pre-install,pre-upgrade"` | 
-| `weight`                  | Weight of the Helm Hook                                                                  | `"5"`                       | 
-| `deletePolicy`            | Delete Policy of the Helm Hook                                                           | `"before-hook-creation"`    | 
-| `parallelism`             | How much pods of Jobs can be run in parallel                                             | `1`                         | 
-| `completions`             | How much pods should finish to finish Job                                                | `1`                         | 
-| `activeDeadlineSeconds`   | Duration of the Job                                                                      | `100`                       | 
-| `backoffLimit`            | Number of retries before considering a Job as failed                                     | `6`                         | 
-| `ttlSecondsAfterFinished` | TTL for delete finished Hook Job                                                         | `100`                       | 
+| `labels`                  | Extra Hook Job labels                                                                    | `{}`                        |
+| `annotations`             | Extra Hook Job annotations                                                               | `{}`                        |
+| `kind`                    | Kind of the Helm Hook                                                                    | `"pre-install,pre-upgrade"` |
+| `weight`                  | Weight of the Helm Hook                                                                  | `"5"`                       |
+| `deletePolicy`            | Delete Policy of the Helm Hook                                                           | `"before-hook-creation"`    |
+| `parallelism`             | How much pods of Jobs can be run in parallel                                             | `1`                         |
+| `completions`             | How much pods should finish to finish Job                                                | `1`                         |
+| `activeDeadlineSeconds`   | Duration of the Job                                                                      | `100`                       |
+| `backoffLimit`            | Number of retries before considering a Job as failed                                     | `6`                         |
+| `ttlSecondsAfterFinished` | TTL for delete finished Hook Job                                                         | `100`                       |
 | `podLabels`               | Extra pod labels for Hook Job                                                            | `{}`                        |
 | `podAnnotations`          | Extra pod annotations for Hook Job                                                       | `{}`                        |
 | `serviceAccountName`      | The name of the ServiceAccount to use by Hook Job                                        | `""`                        |
@@ -299,11 +299,11 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 |---------------------------------------|----------------------------------------------------------------------------------------|-------|
 | `jobsGeneral.labels`                  | Extra labels for all Job                                                               | `{}`  |
 | `jobsGeneral.annotations`             | Extra annotations for all Job                                                          | `{}`  |
-| `jobsGeneral.parallelism`             | How much Jobs can be run in parallel (ignored if defined on Job level)                 | `1`   | 
-| `jobsGeneral.completions`             | How much Pods should finish to finish Job (ignored if defined on Job level)            | `1`   | 
-| `jobsGeneral.activeDeadlineSeconds`   | Duration of the Job (ignored if defined on Job level)                                  | `100` | 
-| `jobsGeneral.backoffLimit`            | Number of retries before considering a Job as failed (ignored if defined on Job level) | `6`   | 
-| `jobsGeneral.ttlSecondsAfterFinished` | TTL for delete finished Job (ignored if defined on Job level)                          | `100` | 
+| `jobsGeneral.parallelism`             | How much Jobs can be run in parallel (ignored if defined on Job level)                 | `1`   |
+| `jobsGeneral.completions`             | How much Pods should finish to finish Job (ignored if defined on Job level)            | `1`   |
+| `jobsGeneral.activeDeadlineSeconds`   | Duration of the Job (ignored if defined on Job level)                                  | `100` |
+| `jobsGeneral.backoffLimit`            | Number of retries before considering a Job as failed (ignored if defined on Job level) | `6`   |
+| `jobsGeneral.ttlSecondsAfterFinished` | TTL for delete finished Job (ignored if defined on Job level)                          | `100` |
 | `jobsGeneral.podLabels`               | Extra pod labels for Job (ignored if defined on Job level)                             | `{}`  |
 | `jobsGeneral.podAnnotations`          | Extra pod annotations for Job (ignored if defined on Job level)                        | `{}`  |
 | `jobsGeneral.serviceAccountName`      | The name of the ServiceAccount to use by Job (ignored if defined on Job level)         | `""`  |
@@ -315,13 +315,13 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 
 | Name                      | Description                                                                              | Value     |
 |---------------------------|------------------------------------------------------------------------------------------|-----------|
-| `labels`                  | Extra Job labels                                                                         | `{}`      | 
-| `annotations`             | Extra Job annotations                                                                    | `{}`      | 
-| `parallelism`             | How much pods of Job can be run in parallel                                              | `1`       | 
-| `completions`             | How much pods should finish to finish Job                                                | `1`       | 
-| `activeDeadlineSeconds`   | Duration of the Job                                                                      | `100`     | 
-| `backoffLimit`            | Number of retries before considering a Job as failed                                     | `6`       | 
-| `ttlSecondsAfterFinished` | TTL for delete finished Hook Job                                                         | `100`     | 
+| `labels`                  | Extra Job labels                                                                         | `{}`      |
+| `annotations`             | Extra Job annotations                                                                    | `{}`      |
+| `parallelism`             | How much pods of Job can be run in parallel                                              | `1`       |
+| `completions`             | How much pods should finish to finish Job                                                | `1`       |
+| `activeDeadlineSeconds`   | Duration of the Job                                                                      | `100`     |
+| `backoffLimit`            | Number of retries before considering a Job as failed                                     | `6`       |
+| `ttlSecondsAfterFinished` | TTL for delete finished Hook Job                                                         | `100`     |
 | `podLabels`               | Extra pod labels for Hook Job                                                            | `{}`      |
 | `podAnnotations`          | Extra pod annotations for Hook Job                                                       | `{}`      |
 | `serviceAccountName`      | The name of the ServiceAccount to use by deployment                                      | `""`      |
@@ -366,17 +366,17 @@ Secret `data` object is a map where value can be a string, json or base64 encode
 
 | Name                         | Description                                                                             | Value     |
 |------------------------------|-----------------------------------------------------------------------------------------|-----------|
-| `labels`                     | Extra CronJob labels                                                                    | `{}`      | 
-| `annotations`                | Extra CronJob annotations                                                               | `{}`      | 
-| `singleOnly`                 | Forbid concurrency policy                                                               | `"false"` | 
-| `startingDeadlineSeconds`    | Duration for starting CronJob                                                           | ``        | 
-| `successfulJobsHistoryLimit` | Limitation of completed jobs should be kept                                             | `3`       | 
-| `failedJobsHistoryLimit`     | Limitation of failed jobs should be kept                                                | `1`       | 
-| `parallelism`                | How much pods of CronJob can be run in parallel                                         | `1`       | 
-| `completions`                | How much pods should finish to finish Job                                               | `1`       | 
-| `activeDeadlineSeconds`      | Duration of the Job                                                                     | `100`     | 
-| `backoffLimit`               | Number of retries before considering a Job as failed                                    | `6`       | 
-| `ttlSecondsAfterFinished`    | TTL for delete finished CronJob                                                         | `100`     | 
+| `labels`                     | Extra CronJob labels                                                                    | `{}`      |
+| `annotations`                | Extra CronJob annotations                                                               | `{}`      |
+| `singleOnly`                 | Forbid concurrency policy                                                               | `"false"` |
+| `startingDeadlineSeconds`    | Duration for starting CronJob                                                           | ``        |
+| `successfulJobsHistoryLimit` | Limitation of completed jobs should be kept                                             | `3`       |
+| `failedJobsHistoryLimit`     | Limitation of failed jobs should be kept                                                | `1`       |
+| `parallelism`                | How much pods of CronJob can be run in parallel                                         | `1`       |
+| `completions`                | How much pods should finish to finish Job                                               | `1`       |
+| `activeDeadlineSeconds`      | Duration of the Job                                                                     | `100`     |
+| `backoffLimit`               | Number of retries before considering a Job as failed                                    | `6`       |
+| `ttlSecondsAfterFinished`    | TTL for delete finished CronJob                                                         | `100`     |
 | `podLabels`                  | Extra pod labels for CronJob                                                            | `{}`      |
 | `podAnnotations`             | Extra pod annotations for CronJob                                                       | `{}`      |
 | `serviceAccountName`         | The name of the ServiceAccount to use by CronJob                                        | `""`      |

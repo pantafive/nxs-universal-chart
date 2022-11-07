@@ -38,7 +38,7 @@ configMaps:
       nginx.conf: |
         worker_processes  1;
         load_module modules/ngx_http_js_module.so;
-  
+
         events {
             worker_connections  1024;
         }
@@ -148,7 +148,7 @@ pvcs:
 #    foo: foo
 
 hooks:
-  migration-up: 
+  migration-up:
     containers:
     - image: registry.app.ru/app-migration
       nodeSelector:
