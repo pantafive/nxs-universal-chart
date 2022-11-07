@@ -54,7 +54,8 @@
               "$id": "#root/deployments/nginx/replicas",
               "title": "Replicas",
               "type": "integer",
-              "default": 0
+              "default": 0,
+              "minimum": 0
             },
             "serviceAccountName": {
               "$id": "#root/deployments/nginx/serviceAccountName",
