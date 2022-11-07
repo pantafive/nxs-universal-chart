@@ -17,7 +17,7 @@ type Values struct {
 type Deployments map[string]*Deployment
 
 type Deployment struct {
-	Replicas           int          `json:"replicas"`
+	Replicas           interface{}  `json:"replicas"`
 	ServiceAccountName string       `json:"serviceAccountName"`
 	Containers         []Containers `json:"containers"`
 }

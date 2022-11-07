@@ -15,7 +15,7 @@ func Test_Deployments_Replicas(t *testing.T) {
 	schema := utils.SchemaLoader()
 
 	tests := []struct {
-		given   int
+		given   interface{}
 		isValid bool
 	}{
 		// valid
@@ -24,12 +24,16 @@ func Test_Deployments_Replicas(t *testing.T) {
 		{given: 2, isValid: true},
 		{given: 3, isValid: true},
 		// invalid
+		{given: nil, isValid: false},
+		{given: "", isValid: false},
+		{given: "1", isValid: false},
 		{given: -1, isValid: false},
+		{given: 0.1, isValid: false},
 	}
 
 	for i := range tests {
 		tt := tests[i]
-		t.Run(fmt.Sprintf("%d", tt.given), func(t *testing.T) {
+		t.Run(fmt.Sprintf("%T:%#v", tt.given, tt.given), func(t *testing.T) {
 			values := utils.DefaultValues()
 			values.Deployments["nginx"].Replicas = tt.given
 
