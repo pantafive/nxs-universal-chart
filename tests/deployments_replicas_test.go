@@ -1,12 +1,14 @@
 package tests
 
 import (
-	"app/tests/utils"
 	"fmt"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/xeipuuv/gojsonschema"
-	"testing"
+
+	"github.com/nixys/nxs-universal-chart/tests/utils"
 )
 
 func Test_Deployments_Replicas(t *testing.T) {

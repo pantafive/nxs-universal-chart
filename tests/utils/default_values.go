@@ -2,8 +2,9 @@ package utils
 
 import (
 	"encoding/json"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 type Values struct {
@@ -36,13 +37,13 @@ func DefaultValues() Values {
 		DefaultImagePullPolicy: "IfNotPresent",
 		Deployments: Deployments{
 			"nginx": &Deployment{
-				Replicas:           2,
+				Replicas:           2, //nolint:gomnd
 				ServiceAccountName: "deployer",
 				Containers: []Containers{
 					{
 						Name:            "nginx",
 						Image:           "nginx",
-						ImageTag:        1.19,
+						ImageTag:        1.19, //nolint:gomnd
 						ImagePullPolicy: "Always",
 					},
 				},

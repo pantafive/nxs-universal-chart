@@ -2,15 +2,16 @@ package utils
 
 import (
 	"fmt"
-	"github.com/xeipuuv/gojsonschema"
-	"gopkg.in/yaml.v2"
 	"os"
 	"path/filepath"
+
+	"github.com/xeipuuv/gojsonschema"
+	"gopkg.in/yaml.v3"
 )
 
 func SchemaLoader() gojsonschema.JSONLoader {
 	root, _ := os.Getwd()
-	schemaPath := filepath.Join(root, "../schema.json")
+	schemaPath := filepath.Join(root, "..", "schema.json")
 	schemaLoader := gojsonschema.NewReferenceLoader(fmt.Sprintf("file://%s", schemaPath))
 	return schemaLoader
 }

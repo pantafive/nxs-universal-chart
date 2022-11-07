@@ -1,20 +1,22 @@
 package tests
 
 import (
-	"app/tests/utils"
 	"fmt"
-	"github.com/stretchr/testify/assert"
-	"github.com/xeipuuv/gojsonschema"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/xeipuuv/gojsonschema"
+
+	"github.com/nixys/nxs-universal-chart/tests/utils"
 )
 
 func TestExperimental(t *testing.T) {
 	root, _ := os.Getwd()
-	schemaPath := filepath.Join(root, "../schema.json")
-	validValues := utils.MustReadYAML(filepath.Join(root, "../samples/schema-demo-valid.values.yaml"))
-	invalidValues := utils.MustReadYAML(filepath.Join(root, "../samples/schema-demo-invalid.values.yaml"))
+	schemaPath := filepath.Join(root, "..", "schema.json")
+	validValues := utils.MustReadYAML(filepath.Join(root, "..", "samples", "schema-demo-valid.values.yaml"))
+	invalidValues := utils.MustReadYAML(filepath.Join(root, "..", "samples", "schema-demo-invalid.values.yaml"))
 
 	schemaLoader := gojsonschema.NewReferenceLoader(fmt.Sprintf("file://%s", schemaPath))
 	validLoader := gojsonschema.NewRawLoader(validValues)
@@ -46,7 +48,5 @@ func TestExperimental(t *testing.T) {
 	})
 
 	t.Run("Main", func(t *testing.T) {
-
 	})
-
 }

@@ -1,11 +1,13 @@
 package tests
 
 import (
-	"app/tests/utils"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/xeipuuv/gojsonschema"
-	"testing"
+
+	"github.com/nixys/nxs-universal-chart/tests/utils"
 )
 
 func Test_Deployments_Containers_ImagePullPolicy(t *testing.T) {

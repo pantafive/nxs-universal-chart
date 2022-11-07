@@ -16,3 +16,9 @@ repos:
       - id: check-jsonschema
         files: ^samples/schema-demo-.*\.(yml|yaml)$
         args: ["--schemafile", "schema.json"]
+
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.50.1
+    hooks:
+      - id: golangci-lint
+        require_serial: true
