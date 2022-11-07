@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func SchemaLoader() gojsonschema.JSONLoader {
 	return schemaLoader
 }
 
-func mustReadYAML(path string) map[string]interface{} {
+func MustReadYAML(path string) map[string]interface{} {
 	file, err := os.Open(path)
 	if err != nil {
 		panic(err)

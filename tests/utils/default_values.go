@@ -1,4 +1,10 @@
-package main
+package utils
+
+import (
+	"encoding/json"
+	"github.com/stretchr/testify/require"
+	"testing"
+)
 
 type Values struct {
 	DefaultImage           string      `json:"defaultImage"`
@@ -10,12 +16,12 @@ type Values struct {
 type Deployments map[string]*Deployment
 
 type Deployment struct {
-	Replicas           int        `json:"replicas"`
-	ServiceAccountName string     `json:"serviceAccountName"`
-	Containers         Containers `json:"containers"`
+	Replicas           int          `json:"replicas"`
+	ServiceAccountName string       `json:"serviceAccountName"`
+	Containers         []Containers `json:"containers"`
 }
 
-type Containers []struct {
+type Containers struct {
 	Name            string  `json:"name"`
 	Image           string  `json:"image"`
 	ImageTag        float64 `json:"imageTag"`
@@ -32,7 +38,7 @@ func DefaultValues() Values {
 			"nginx": &Deployment{
 				Replicas:           2,
 				ServiceAccountName: "deployer",
-				Containers: Containers{
+				Containers: []Containers{
 					{
 						Name:            "nginx",
 						Image:           "nginx",
@@ -45,4 +51,10 @@ func DefaultValues() Values {
 	}
 
 	return values
+}
+
+func (v *Values) AsJSON(t *testing.T) string {
+	result, err := json.Marshal(v)
+	require.NoErrorf(t, err, "Failed to marshal values to JSON: %s", err)
+	return string(result)
 }

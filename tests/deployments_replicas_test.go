@@ -1,6 +1,7 @@
-package main
+package tests
 
 import (
+	"app/tests/utils"
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -9,7 +10,7 @@ import (
 )
 
 func Test_Deployments_Replicas(t *testing.T) {
-	schema := SchemaLoader()
+	schema := utils.SchemaLoader()
 
 	tests := []struct {
 		given   int
@@ -27,7 +28,7 @@ func Test_Deployments_Replicas(t *testing.T) {
 	for i := range tests {
 		tt := tests[i]
 		t.Run(fmt.Sprintf("%d", tt.given), func(t *testing.T) {
-			values := DefaultValues()
+			values := utils.DefaultValues()
 			values.Deployments["nginx"].Replicas = tt.given
 
 			result, err := gojsonschema.Validate(schema, gojsonschema.NewGoLoader(values))
